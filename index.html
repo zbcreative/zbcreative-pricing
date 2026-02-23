@@ -87,7 +87,7 @@ nav a.active{color:var(--or)} nav a.active::after{transform:scaleX(1)}
 .mcl{position:absolute;top:18px;right:22px;font-size:1.8rem;color:var(--ch)}
 
 /* HERO */
-.hero{min-height:60vh;display:flex;align-items:center;padding:72px 0 72px;position:relative;overflow:hidden}
+.hero{min-height:60vh;display:flex;align-items:center;padding:72px 0 72px;position:relative;overflow:hidden;background:var(--cream)}
 .hbg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 72% 50%,rgba(43,111,168,.09) 0%,transparent 70%),radial-gradient(ellipse 40% 60% at 15% 85%,rgba(245,184,0,.11) 0%,transparent 60%),radial-gradient(ellipse 45% 40% at 80% 15%,rgba(217,79,43,.07) 0%,transparent 60%)}
 .hd{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(26,26,26,.09) 1px,transparent 1px);background-size:30px 30px;opacity:.5}
 .blob{position:absolute;border-radius:60% 40% 55% 45% / 50% 60% 40% 50%;opacity:.06;pointer-events:none}
@@ -263,19 +263,46 @@ footer{background:var(--ch);padding:clamp(48px,6vw,80px) 0 30px;color:rgba(255,2
 [data-d="1"]{transition-delay:.1s}[data-d="2"]{transition-delay:.2s}[data-d="3"]{transition-delay:.3s}[data-d="4"]{transition-delay:.4s}
 
 /* RESPONSIVE */
+@media(min-width:861px){
+  .support-grid{grid-template-columns:1fr 1fr}
+}
 @media(max-width:860px){
   .hero-inner{grid-template-columns:1fr}
   .pricing-grid{grid-template-columns:1fr}
+  .support-grid{grid-template-columns:1fr}
   .hris{display:none}
   .psteps{grid-template-columns:1fr 1fr}
   .psteps::before{display:none}
   .fgr{grid-template-columns:1fr 1fr}
-  .ctable{font-size:.82rem}
-  .ctable tbody td,.ctable thead th{padding:12px 14px}
+  .ctable{font-size:.78rem}
+  .ctable tbody td,.ctable thead th{padding:10px 10px}
+  .ctable thead th{font-size:.72rem}
+  .ctable tbody td:first-child{font-size:.78rem}
+  .ctable tfoot td{padding:12px 10px;font-size:.78rem}
+  .ctable tfoot td:not(:first-child){font-size:.9rem !important}
   .pricing-single .feats{grid-template-columns:1fr !important}
+  .wcard{padding:clamp(22px,4vw,44px)}
+  .card-price{font-size:clamp(2.8rem,8vw,3.8rem)}
+  .card-h{font-size:clamp(1.25rem,4vw,1.55rem)}
+  .card-sub{font-size:clamp(.85rem,2.5vw,.93rem)}
+  .card-ey{flex-wrap:wrap;gap:8px}
+  .feat{font-size:clamp(.82rem,2.5vw,.93rem)}
+  .btn{padding:12px 24px;font-size:.88rem}
+  .hperks{gap:10px}
+  .hperk{padding:6px 12px}
+  .hperk-label{font-size:.72rem}
+  .compare .sh .st{font-size:clamp(1.6rem,5vw,2.85rem)}
 }
 @media(max-width:540px){
   .psteps,.fgr{grid-template-columns:1fr}
+  .card-psub{font-size:.75rem}
+  .card-cat{font-size:.65rem}
+  .step-label{font-size:1rem}
+  .ctable{font-size:.72rem}
+  .ctable tbody td,.ctable thead th{padding:8px 8px}
+  .ctable thead th{font-size:.68rem;padding:10px 8px}
+  .ctable tbody td:first-child{font-size:.72rem}
+  .ctable tfoot td:not(:first-child){font-size:.8rem !important}
 }
 </style>
 </head>
@@ -442,7 +469,7 @@ footer{background:var(--ch);padding:clamp(48px,6vw,80px) 0 30px;color:rgba(255,2
       <div class="step-label"><span class="step-num">2</span> Choose Your Support</div>
     </div>
 
-    <div class="pricing-grid" style="grid-template-columns:1fr 1fr">
+    <div class="pricing-grid support-grid">
 
       <!-- MAINTENANCE CARD -->
       <div class="wcard dk fu" data-d="2" itemscope itemtype="https://schema.org/Offer">
